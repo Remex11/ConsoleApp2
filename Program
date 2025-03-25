@@ -1,0 +1,19 @@
+namespace ConsoleApp7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Library<Media> lib = new Library<Media>();
+            Media med1 = new Media("фмкщкф", "aфккф", 2001, true);
+            Media med2 = new Media("111", "333", 2003, true);
+            Media med3 = new Media("виувиу", "виви", 2022, true);
+
+            lib.Add(med1);
+            lib.FindByTitle(med1.Title);
+            lib.Add(med2);
+            lib.Remove(med2.Title);
+            lib.PrintAll();
+        }
+    }
+}
