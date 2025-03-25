@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+   
+    public class Media
+    {
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public int YearPublished { get; set; }
+        public bool IsAvailable { get; set; }
+        public Media(string Title, string Author, int YearPublished, bool IsAvailable)
+        {
+            this.Title = Title;
+            this.Author = Author;
+            this.YearPublished = YearPublished;
+            this.IsAvailable = IsAvailable;
+        }
+            
+        
+    }
+}
