@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -55,8 +55,9 @@ namespace ConsoleApp7
         }
         public IEnumerable<T> FilterByYear(int year)
         {
-            return List.Where(x => x.YearPublished > year);
+            return List.Where(x => x.YearPublished == year);
         }
+        
         public void PrintAll()
         {
             foreach (var item in List)
@@ -117,6 +118,46 @@ namespace ConsoleApp7
                     Console.WriteLine($"{item.Title} уже доступен в библиотеке.");
                 }
             }
+        }
+        public IEnumerable<Book> FilterByYearBook(int year)
+        {
+            try
+            {
+                return List.OfType<Book>().Where(x => x.YearPublished > year).ToList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            
+        }
+        public IEnumerable<Movie> SortByDurationMin()
+        {
+            try
+            {
+                return List.OfType<Movie>().OrderBy(x => x.DurationMin).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            
+        }
+        public IEnumerable<T> GetAvailable()
+        {
+            try
+            {
+                return List.Where(x => !x.IsAvailable);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            
         }
     }
 }
