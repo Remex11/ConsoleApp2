@@ -1,18 +1,17 @@
-namespace ConsoleApp7
+﻿namespace ConsoleApp7
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Library<Media> lib = new Library<Media>();
-            Media med1 = new Media("фмкщкф", "aфккф", 2001, true);
-            Media med2 = new Media("111", "333", 2003, true);
-            Media med3 = new Media("виувиу", "виви", 2022, true);
+            Library<Book> lib = new Library<Book>();
+            Book book1 = new Book("Онениг", "Пушкин", 1823, true, mnogo, "Novela");
+            
+            s
+            lib.Add(book1);
+            lib.SortByDurationMin();   
 
-            lib.Add(med1);
-            lib.FindByTitle(med1.Title);
-            lib.Add(med2);
-            lib.Remove(med2.Title);
+
             lib.PrintAll();
         }
     }
